@@ -8,10 +8,9 @@ public class ClienteSocketDatagram {
 
 	public static void main(String[] args) {
 		
-		try (DatagramSocket datagramSocket = new DatagramSocket()) {
+		try (DatagramSocket datagramSocket = new DatagramSocket(null)) {
 			
 			InetSocketAddress addr = new InetSocketAddress("192.168.106.16",7777);
-			datagramSocket.setReuseAddress(true);
 			datagramSocket.bind(addr);
 			
 			String mensaje = "Hola";
