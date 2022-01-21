@@ -14,7 +14,7 @@ public class ClienteSocketDatagram {
 			datagramSocket.bind(addr);
 			
 			String mensaje = "Hola";
-			InetSocketAddress direccionDestino = new InetSocketAddress("192.168.106.71",5555);
+			InetSocketAddress direccionDestino = new InetSocketAddress("192.168.106.16",5555);
 			DatagramPacket datagrama = new DatagramPacket(mensaje.getBytes(),mensaje.getBytes().length,direccionDestino);
 			datagramSocket.send(datagrama);
 			System.out.println("Envia mensaje -> "+mensaje);
@@ -27,9 +27,6 @@ public class ClienteSocketDatagram {
 		catch(Exception e){
 			e.printStackTrace();
 		}
-		
-		
-
 	}
 
 }
