@@ -1,4 +1,4 @@
-package castro.adrian.ejercicio2;
+package practica4.castro.adrian.ejercicio1;
 
 import java.io.InputStream;
 import java.io.OutputStream;

@@ -1,4 +1,4 @@
-package castro.adrian.ejercicio1;
+package practica4.castro.adrian.ejercicio2;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,14 +17,13 @@ public class ServidorSocketStream {
 			serverSocket.bind(addr);
 			
 			while(true) {
+				System.out.println("Aceptando conexiones");
 				Socket socket = serverSocket.accept();
 				contador++;
-				
-				//InputStream is = socket.getInputStream();
-				OutputStream os = socket.getOutputStream();
-				
-				os.write(Integer.toString(contador).getBytes());
-				socket.close();
+
+				Runnable socketCliente = new ServidorRunnable(socket,contador);
+				Thread hilo = new Thread(socketCliente);
+				hilo.start();
 			}
 		}
 		catch(Exception e) {

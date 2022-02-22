@@ -1,4 +1,4 @@
-package castro.adrian.ejercicio5;
+package practica4.castro.adrian.ejercicio5;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
